@@ -13,7 +13,7 @@ export default function ResetPassword() {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const  onSubmit = async (data) => {
+  const onSubmit = async (data) => {
     try {
       setIsSubmitting(true);
       const res = await axiosRequest({
@@ -21,7 +21,7 @@ const  onSubmit = async (data) => {
         data: data,
         method: "POST",
       });
-      toast.success(res.message)
+      toast.success(res.message);
       setErrMsg(res);
       setIsSubmitting(false);
     } catch (error) {
@@ -32,7 +32,7 @@ const  onSubmit = async (data) => {
 
   return (
     <div className="bg-bgColor w-full h-screen flex p-6 justify-center items-center ">
-      <div className="  bg-primary rounded-lg shadow-sm h-fit  overflow-hidden gap-3 flex flex-col p-3">
+      <div className="  border rounded-lg shadow-sm h-fit  overflow-hidden gap-3 flex flex-col p-3">
         <div className="text-lg ">Email</div>
         <div className="text-xs text-[gray] mx-3">
           Enter email address used during registration

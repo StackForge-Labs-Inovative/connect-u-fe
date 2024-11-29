@@ -21,7 +21,7 @@ const InputField = React.forwardRef(
       <div className={`flex flex-col w-full gap-1 ${parentStyle}`}>
         {label && (
           <label
-            className={`text-sm text-foreground  ${labelStyle}`}
+            className={`text-sm text-foreground ${labelStyle}`}
             htmlFor={label}
           >
             {label}
@@ -33,13 +33,13 @@ const InputField = React.forwardRef(
           type={type}
           placeholder={placeholder}
           ref={ref}
-          className={`focus:border-purple  border-2 border-primary/10 text-foreground  bg-input hover:border-primary  focus:border-primary  p-3 text-sm  rounded outline-none ${styles} `}
+          className={`focus:border-purple w-full bg-input border-2 border-primary/10 text-foreground hover:border-primary focus:border-primary p-3 text-sm rounded outline-none ${styles}`}
           {...register}
           aria-invalid={error ? true : false}
           {...rest}
         />
         {error && (
-          <div className="text-xs bg-destructive px-4 py-1 text-[white]">
+          <div className="text-xs bg-destructive px-4 py-1 text-white">
             {error}
           </div>
         )}
